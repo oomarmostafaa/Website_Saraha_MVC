@@ -1,0 +1,26 @@
+{
+  "name": "sarahah-full-stack",
+  "version": "1.0.0",
+  "description": "Saraha is a full-stack MVC (Model-View-Controller) application inspired by the functionality of the Saraha project. It provides features such as user authentication, registration, sending messages to other users, and viewing received messages. The project is built using HTML, CSS, JavaScript, Bootstrap for front-end development, and Node.js, Express, MongoDB, along with packages like bcrypt, JWT, and Mongoose for back-end development.",
+  "keywords": [],
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "connect-flash": "^0.1.1",
+    "connect-mongodb-session": "^3.1.1",
+    "dotenv": "^16.0.3",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "joi": "^17.9.1",
+    "mongoose": "^7.0.2",
+    "qrcode": "^1.5.4"
+  }
+}

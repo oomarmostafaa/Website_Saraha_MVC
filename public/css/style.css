@@ -1,0 +1,670 @@
+/* خلفية متحركة */
+body {
+    background: radial-gradient(circle at top left, #19203a 0%, #070c18 45%, #02050d 100%);
+    color: #e7ecff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Navbar مع تأثيرات */
+.bg-custom {
+    background: rgba(8, 17, 31, 0.95) !important;
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    animation: slideDown 1s ease-out;
+}
+
+@keyframes slideDown {
+    from { transform: translateY(-100%); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.nav-link {
+    color: #fff !important;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.nav-link:hover {
+    color: #e0e0e0 !important;
+    transform: scale(1.05);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 50%;
+    background-color: #fff;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+/* أزرار تفاعلية */
+.btn-default-outline {
+    color: #7ed6ff !important;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(126,214,255,0.35);
+    width: 220px;
+    border-radius: 50px;
+    transition: all 0.4s ease;
+    box-shadow: 0 10px 25px rgba(46, 190, 247, 0.18);
+    position: relative;
+    overflow: hidden;
+    animation: bounceIn 1.2s ease-out;
+}
+
+@keyframes bounceIn {
+    0% { transform: scale(0.8); opacity: 0; }
+    50% { transform: scale(1.02); }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.btn-default-outline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(126,214,255,0.2), transparent);
+    transition: left 0.5s;
+}
+
+.btn-default-outline:hover::before {
+    left: 100%;
+}
+
+.btn-default-outline:hover {
+    color: #fff !important;
+    background: rgba(126,214,255,0.18);
+    box-shadow: 0 10px 30px rgba(126,214,255,0.3);
+    transform: translateY(-3px) scale(1.02);
+}
+
+/* عناصر أخرى */
+.forgot:hover {
+    color: #10BBB3 !important;
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+}
+
+.login {
+    color: #0da39c;
+    font-weight: bold;
+    animation: fadeInUp 1s ease-out;
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.user-icon {
+    font-size: 60px;
+    color: #C0C0C0;
+    margin-bottom: 20px;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.avatar {
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 4px solid #fff;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translate(-50%, -50%) translateY(0px); }
+    50% { transform: translate(-50%, -50%) translateY(-10px); }
+}
+
+.avatar:hover {
+    transform: translate(-50%, -50%) scale(1.1);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+}
+
+.share {
+    margin: 0px auto 10px auto;
+    animation: fadeIn 2s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* بطاقات تفاعلية */
+.card {
+    border: none;
+    border-radius: 22px;
+    box-shadow: 0 14px 40px rgba(0,0,0,0.22);
+    transition: all 0.4s ease;
+    background: rgba(8, 14, 26, 0.96);
+    backdrop-filter: blur(10px);
+    animation: slideUp 1s ease-out;
+    color: #eef5ff;
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.card:hover {
+    box-shadow: 0 22px 55px rgba(0,0,0,0.28);
+    transform: translateY(-6px);
+}
+
+/* نماذج */
+.form-control {
+    border-radius: 15px;
+    border: 1px solid rgba(255,255,255,0.14);
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.07);
+    animation: fadeInLeft 1.2s ease-out;
+    color: #eef5ff;
+}
+
+@keyframes fadeInLeft {
+    from { opacity: 0; transform: translateX(-30px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+.form-control:focus {
+    border-color: rgba(126,214,255,0.9);
+    box-shadow: 0 0 0 0.2rem rgba(46, 190, 247, 0.2);
+    transform: scale(1.02);
+    background: rgba(255, 255, 255, 0.11);
+}
+
+/* أزرار أخرى */
+.btn-outline-info {
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    animation: zoomIn 1.5s ease-out;
+}
+
+@keyframes zoomIn {
+    from { opacity: 0; transform: scale(0.5); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.btn-outline-info:hover {
+    background: linear-gradient(135deg, #17a2b8, #138496);
+    border-color: #17a2b8;
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 8px 20px rgba(23, 162, 184, 0.3);
+}
+
+/* مودال */
+.modal-content {
+    border-radius: 20px;
+    border: none;
+    animation: modalFadeIn 0.5s ease-out;
+}
+
+@keyframes modalFadeIn {
+    from { opacity: 0; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* لوجو */
+.navbar-brand img {
+    transition: all 0.3s ease;
+    animation: logoSpin 1s ease-out;
+}
+
+@keyframes logoSpin {
+    from { transform: rotate(-180deg) scale(0); }
+    to { transform: rotate(0deg) scale(1); }
+}
+
+.navbar-brand:hover img {
+    transform: scale(1.1) rotate(5deg);
+}
+
+/* تأثيرات عامة */
+* {
+    box-sizing: border-box;
+}
+
+.container {
+    animation: fadeInUp 1s ease-out;
+}
+
+/* تأثيرات للرسائل */
+.card p {
+    animation: typeWriter 2s steps(40, end) 1s both;
+}
+
+@keyframes typeWriter {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+/* قسم البطل */
+.hero-section {
+    position: relative;
+    padding: 50px 0;
+}
+
+.hero-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #f5f8ff;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.4);
+    animation: fadeInUp 1s ease-out;
+    margin-bottom: 40px;
+}
+
+.floating-icons {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.floating-icon {
+    position: absolute;
+    color: rgba(255, 255, 255, 0.18);
+    font-size: 2rem;
+    animation: floatAround 10s infinite linear;
+}
+
+.icon-1 {
+    top: 20%;
+    left: 10%;
+    animation-duration: 12s;
+    animation-delay: 0s;
+}
+
+.icon-2 {
+    top: 60%;
+    right: 15%;
+    animation-duration: 15s;
+    animation-delay: 2s;
+}
+
+.icon-3 {
+    bottom: 30%;
+    left: 20%;
+    animation-duration: 18s;
+    animation-delay: 4s;
+}
+
+.icon-4 {
+    top: 40%;
+    right: 5%;
+    animation-duration: 14s;
+    animation-delay: 6s;
+}
+
+@keyframes floatAround {
+    0% { transform: translateY(0px) rotate(0deg); }
+    25% { transform: translateY(-20px) rotate(90deg); }
+    50% { transform: translateY(0px) rotate(180deg); }
+    75% { transform: translateY(20px) rotate(270deg); }
+    100% { transform: translateY(0px) rotate(360deg); }
+}
+
+/* حاويات الدخول */
+.login-container, .register-container {
+    animation: slideInFromBottom 1s ease-out;
+}
+
+@keyframes slideInFromBottom {
+    from { opacity: 0; transform: translateY(100px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.login-card, .register-card {
+    animation: cardFlip 1s ease-out;
+}
+
+@keyframes cardFlip {
+    from { transform: rotateY(90deg); opacity: 0; }
+    to { transform: rotateY(0deg); opacity: 1; }
+}
+
+.input-group-text {
+    background: rgba(14, 29, 52, 0.95);
+    color: #d9f2ff;
+    border: none;
+    border-radius: 15px 0 0 15px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+    animation: fadeInLeft 1s ease-out;
+}
+
+.login-btn {
+    animation: pulseBtn 2s infinite;
+}
+
+@keyframes pulseBtn {
+    0% { box-shadow: 0 4px 15px rgba(46, 190, 247, 0.22); }
+    50% { box-shadow: 0 4px 25px rgba(46, 190, 247, 0.44); }
+    100% { box-shadow: 0 4px 15px rgba(46, 190, 247, 0.22); }
+}
+
+.register-btn {
+    animation: glowBtn 2s infinite alternate;
+}
+
+@keyframes glowBtn {
+    0% { box-shadow: 0 4px 15px rgba(126, 214, 255, 0.27); }
+    100% { box-shadow: 0 4px 25px rgba(126, 214, 255, 0.55); }
+}
+
+.error-msg {
+    animation: shake 0.5s ease-in-out;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
+
+.alert-custom {
+    border: 1px solid rgba(255, 100, 100, 0.35);
+    background: rgba(255, 100, 100, 0.12);
+    color: #ffb3b3;
+    border-radius: 15px;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+/* بطاقات الرسائل */
+.message-card {
+    position: relative;
+    overflow: hidden;
+    animation: slideInRight 0.8s ease-out;
+    background: rgba(8, 14, 26, 0.96);
+    border: 1px solid rgba(255,255,255,0.08);
+}
+
+@keyframes slideInRight {
+    from { opacity: 0; transform: translateX(100px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+.message-card:hover {
+    transform: translateY(-5px) rotate(1deg);
+    transition: all 0.3s ease;
+}
+
+.message-content {
+    position: relative;
+    padding: 20px;
+}
+
+.quote-icon {
+    color: rgba(46, 190, 247, 0.18);
+    font-size: 2rem;
+}
+
+.quote-icon:first-child {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+}
+
+.quote-icon:last-child {
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+}
+
+.message-text {
+    font-size: 1.2rem;
+    font-style: italic;
+    color: #d7e4ff;
+    margin: 20px 0;
+    line-height: 1.8;
+    animation: fadeInText 1.5s ease-out;
+}
+
+@keyframes fadeInText {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.message-footer {
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding-top: 10px;
+    margin-top: 20px;
+}
+
+.empty-card {
+    animation: fadeInScale 1s ease-out;
+    background: rgba(8, 14, 26, 0.95);
+    border: 1px solid rgba(255,255,255,0.08);
+}
+
+@keyframes fadeInScale {
+    from { opacity: 0; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* بطاقة الملف الشخصي */
+.user-profile-card {
+    position: relative;
+    animation: cardEntrance 1s ease-out;
+    background: rgba(8, 14, 26, 0.96);
+    border: 1px solid rgba(255,255,255,0.08);
+}
+
+@keyframes cardEntrance {
+    from { opacity: 0; transform: translateY(-50px) scale(0.9); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.profile-link {
+    position: relative;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.profile-overlay {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100px;
+    height: 100px;
+    background: rgba(46, 190, 247, 0.85);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.profile-link:hover .profile-overlay {
+    opacity: 1;
+}
+
+.user-name {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #d7e4ff;
+    animation: nameGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes nameGlow {
+    from { text-shadow: 0 0 5px rgba(46, 190, 247, 0.6); }
+    to { text-shadow: 0 0 22px rgba(46, 190, 247, 0.9); }
+}
+
+.message-form {
+    animation: formSlideUp 1s ease-out 0.5s both;
+}
+
+@keyframes formSlideUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.message-textarea {
+    resize: none;
+    transition: all 0.3s ease;
+    background: rgba(255,255,255,0.08);
+    color: #e5ecff;
+}
+
+.message-textarea:focus {
+    transform: scale(1.02);
+    box-shadow: 0 0 20px rgba(46, 190, 247, 0.3);
+}
+
+.send-btn {
+    animation: btnBounce 1s ease-out 1s both;
+}
+
+@keyframes btnBounce {
+    0% { transform: scale(0); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.btn-outline-info:hover {
+    background: rgba(23, 162, 184, 0.2);
+    border-color: rgba(23, 162, 184, 0.6);
+}
+
+.share-link {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+}
+
+.share-url {
+    display: inline-block;
+    word-break: break-all;
+    color: #d4f6ff;
+    background: rgba(255,255,255,0.08);
+    padding: 14px 16px;
+    border-radius: 16px;
+    border: 1px solid rgba(126,214,255,0.28);
+    margin-top: 10px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.share-url:hover {
+    background: rgba(126,214,255,0.18);
+    color: #ffffff;
+    border-color: rgba(126,214,255,0.45);
+}
+
+.share-note {
+    color: rgba(255,255,255,0.72);
+    font-size: 0.95rem;
+}
+
+.qr-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.qr-container a {
+    display: inline-block;
+    border-radius: 24px;
+    padding: 10px;
+    background: rgba(255,255,255,0.05);
+    transition: all 0.3s ease;
+}
+
+.qr-container a:hover {
+    transform: translateY(-2px);
+    background: rgba(255,255,255,0.12);
+}
+
+.qr-container img {
+    width: 260px;
+    height: 260px;
+    border-radius: 18px;
+    border: 1px solid rgba(255,255,255,0.1);
+    background: rgba(0,0,0,0.25);
+    cursor: pointer;
+}
+
+.text-muted {
+    color: rgba(255,255,255,0.65) !important;
+}
+
+.btn {
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.message-form {
+    animation: formSlideUp 1s ease-out 0.5s both;
+}
+
+@keyframes formSlideUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.message-textarea {
+    resize: none;
+    transition: all 0.3s ease;
+}
+
+.message-textarea:focus {
+    transform: scale(1.02);
+    box-shadow: 0 0 20px rgba(16, 187, 179, 0.3);
+}
+
+.send-btn {
+    animation: btnBounce 1s ease-out 1s both;
+}
+
+@keyframes btnBounce {
+    0% { transform: scale(0); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}

@@ -1,0 +1,58 @@
+<%- include('./shared/navbar.ejs') %>
+
+<div class="container text-center py-5 my-5 text-center">
+    <div class="card py-5 mb-5 user-profile-card">
+        <a href="" data-toggle="modal" data-target="#profile" class="profile-link">
+            <img src="/img/avatar.png" class="avatar " alt="">
+            <div class="profile-overlay">
+                <i class="fas fa-camera"></i>
+            </div>
+        </a>
+        <h3 class="py-2 user-name"><%= name %></h3>
+        <div class="container w-50 m-auto">
+            <form action="/handelMessage" method="post" class="message-form">
+                <div class="form-group">
+                    <label for="message" class="form-label">Send a message to <%= name %></label>
+                    <textarea class="form-control message-textarea" name="message" id="message" cols="10" rows="9" placeholder="You cannot send a Sarahah to yourself, share your profile with your friends :)"></textarea>
+                </div>
+                <input type="text" value="<%= id %>" hidden name="sendToId">
+                <button class="btn btn-outline-info mt-3 send-btn"><i class="far fa-paper-plane"></i> Send</button>
+            </form>
+        </div>
+    </div>
+    <button data-toggle="modal" data-target="#share" class="btn btn-default-outline share"><i class="fas fa-share-alt"></i>  Share Profile</button>
+</div>
+
+
+<!--  Share profile Modal -->
+<div class="modal fade" id="share" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Share Profile</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+            </div>
+            <div class="modal-body">
+                <div class="share-link">
+                    <label class="text-muted">Share this page:</label>
+                    <a class="share-url" href="<%= profileLink %>" target="_blank" rel="noopener"><%= profileLink %></a>
+                    <small class="share-note">Click the link or scan the QR code to send a message.</small>
+                </div>
+                <div class="qr-container">
+                    <a href="<%= profileLink %>" target="_blank" rel="noopener">
+                        <img src="<%= qrCode %>" alt="QR Code">
+                    </a>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /modal -->
+
+
+<%- include('./shared/footer.ejs') %>
